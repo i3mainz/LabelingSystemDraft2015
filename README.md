@@ -32,7 +32,13 @@ More about the project you can find at the [i3mainz](http://i3mainz.hs-mainz.de/
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Florian Thiery M.Sc. - [i3mainz](http://i3mainz.hs-mainz.de/en/institute) - Institute for Spatial Information and Surveying Technology Hochschule Mainz University of Applied Sciences
+Copyright (c) 2015 [i3mainz](http://i3mainz.hs-mainz.de/en/institute)**
+
+**Florian Thiery M.Sc.
+
+**[i3mainz](http://i3mainz.hs-mainz.de/en/institute) - Institute for Spatial Information and Surveying Technology
+
+**Hochschule Mainz University of Applied Sciences
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
