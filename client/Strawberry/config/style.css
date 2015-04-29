@@ -1,0 +1,50 @@
+body {
+  padding: 2em 70px 2em 70px;
+  margin: 0;
+  font-family: sans-serif;
+  color: black;
+  background: white;
+}
+
+a:link    {color: blue;text-decoration:underline}
+a:visited {color: blue;text-decoration:underline}
+a:hover   {color: blue;text-decoration:underline}
+a:active  {color: blue;text-decoration:underline}
+
+h1, h2, h3, h4, h5, h6 { text-align: left }
+h1, h2, h3 { color: #036; background: white }
+h1 { font: 170% sans-serif }
+h2 { font: 140% sans-serif }
+h3 { font: 120% sans-serif }
+h4 { font: bold 100% sans-serif }
+h5 { font: italic 100% sans-serif }
+h6 { font: small-caps 100% sans-serif }
+
+p {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+dt, dd { margin-top: 0; margin-bottom: 0 } /* opera 3.50 */
+dt { font-weight: bold }
+
+table 
+{ 
+  width: 100%;
+  border-top: 1px solid #000; 
+  border-left: 1px solid #000; 
+  margin-bottom: 10px; 
+}
+
+table th 
+{ 
+  background: #ccc; 
+}
+
+table td, table th 
+{ 
+  border-right: 1px solid #000; 
+  border-bottom: 1px solid #000; 
+  padding: .5em; 
+  vertical-align:top;
+}

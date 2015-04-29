@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Internal Labeling System Vocabulary</title>
+<script type="text/javascript" src="../client/config.js"></script>
+<link type="text/css" rel="stylesheet" href="../config/style.css"/>
+<script>
+var hash = window.location.hash;
+console.log(hash);
+</script>
+</head>
+
+<body>
+<h1>Internal Labeling System Vocabulary</h1>
+<script>document.write('<h2>Related <a href="'+Conf.Ontology+'">Ontology</a></h2>');</script>
+<hr/>
+
+<h2>Requested URI</h2>
+<script>document.write('<p>'+Conf.INSTANCE_GUIS+hash+'</p>');</script>
+<br/>
+<hr/>
+
+<h2>Note</h2>
+<script>document.write('<p>This URI is only for internal use. The requested resource is an instance of <a href="'+Conf.CLASS_GUI+'">'+Conf.CLASS_GUI+'</a></p>');</script>
+<br/>
+<hr/>
+
+<h2>External View</h2>
+<script>document.write('<p>The external view as <b>ls:GUI</b> for this instance is <a href=\"'+Conf.REST_GUIS+hash.replace(/#/g, "")+'\">'+Conf.REST_GUIS+hash.replace(/#/g, "")+'</a></p>');</script>
+<br/>
+<hr/>
+
+</body>
+</html>

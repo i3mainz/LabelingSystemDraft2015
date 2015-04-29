@@ -1,0 +1,183 @@
+html, body {
+	margin: 0px;
+	background: #fff;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:0.95em;
+	color:#4d4948;
+	text-align: justify;
+	height: 101%;
+}
+
+h1 {
+	margin: 0;
+	text-align: center;
+	font-size: 150%;
+	padding: 0px;
+}
+
+h2 {
+	margin: 0;
+	text-align: center;
+	font-size: 120%;
+	padding: 0px;
+}
+
+h3 {
+	margin: 0;
+	font-size: 105%;
+	padding: 0px;
+}
+
+a {
+	color:#4d4948;
+}
+
+h11 {
+	margin: 0;
+	text-align: center;
+	font-size: 150%;
+	padding: 0px;
+	font-weight:bold;
+	color: white;
+}
+
+h111 {
+	margin: 0;
+	text-align: left;
+	font-size: 150%;
+	padding: 0px;
+}
+
+#top {
+	margin: 0 auto 0 auto;
+	background:url('images/top-bg.jpg') repeat-x;
+	width:100%;
+	height:135px;
+}
+
+#bottom {
+   position: relative;
+	margin-top: -50px; /* negative value of footer height */
+	height: 50px;
+	clear:both;
+	background-color:#ffffff;
+}
+
+#logo {
+	#margin: 0 auto 0 auto;
+	background:url('images/i3mainz.png');
+	height: 175px;
+}
+
+#content {
+	margin: 0 auto 0 auto;
+	width: 95%;
+}
+
+#content #left-nav {
+	width:15%;
+	float:left;
+	font-size:95%;
+}
+
+#content #left-nav ul {
+	padding:0 0 25px 0;
+	margin:0;
+}
+
+#content #left-nav ul li {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+
+#content #left-nav ul li a {
+	text-decoration:none;
+}
+
+#content #left-nav ul li a:hover {
+	color:#ff0505;
+	text-decoration:underline;
+}
+
+#content #main {
+	float:left;
+	width:85%;
+	font-size:90%;
+}
+
+#content #maingrey {
+	float:left;
+	width:85%;
+	font-size:90%;
+	background-color: #dddddd;
+}
+
+#content #sparqlgrey {
+	float:left;
+	width:85%;
+	font-size:90%;
+	background-color: #eeeeee;
+}
+
+#content #main #regbox {
+	padding: 0 0 0 0;
+}
+
+#content #main #regbox label {
+	width:100px;
+	float:left;
+}
+
+table.admin td {
+	vertical-align: top;	
+}
+
+#error {
+	display:block;
+	margin:5px;
+	color:#4d4948;
+	background-color:#fffebe;
+	border: 1px solid #cbcbcb;
+	font-size:90%;
+}
+
+#success {
+	margin:5px;
+	color:#4d4948;
+	background-color:#bce9b5;
+	border: 1px solid #7ace6c;
+	font-size:90%;
+}
+
+info {
+	display:block;
+	margin:5px;
+	color:#4d4948;
+	background-color:#dddddd;
+	border: 1px solid #cbcbcb;
+	font-size:90%;
+}
+
+info2 {
+	display:block;
+	color:#4d4948;
+	background-color:#fffebe;
+	border: 1px solid #cbcbcb;
+	font-size:90%;
+	margin: 10px 100px 10px 100px;
+}
+
+/* progressbar */
+
+.ui-progressbar {
+	position: relative;
+	width: 50%;
+}
+.progress-label {
+	position: absolute;
+	left: 50%;
+	top: 4px;
+	font-weight: bold;
+	text-shadow: 1px 1px 0 #fff;
+}

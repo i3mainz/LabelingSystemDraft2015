@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>DevBridge Autocomplete Demo</title>
+		<style type="text/css">
+
+body { font-family: sans-serif; font-size: 14px; line-height: 1.6em; margin: 0; padding: 0; }
+.container { width: 800px; margin: 0 auto; }
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; cursor: default; overflow: auto; -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-no-suggestion { padding: 2px 5px;}
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: bold; color: #000; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { font-weight: bold; font-size: 16px; color: #000; display: block; border-bottom: 1px solid #000; }
+
+input { font-size: 28px; padding: 10px; border: 1px solid #CCC; display: block; margin: 20px 0; }
+
+
+</style>
+	</head>
+	<body>
+		<div style="position: relative; height: 80px;">
+            <input type="text" name="country" id="autocomplete" style="position: absolute; z-index: 2; background: transparent;"/>
+            <input type="text" name="country" id="autocomplete-ajax-x" disabled="disabled" style="color: #CCC; position: absolute; background: transparent; z-index: 1;"/>
+        </div>
+        <div id="selction-ajax"></div>
+
+
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="jquery.autocomplete.js"></script>
+
+		<script>
+
+
+
+			// Initialize ajax autocomplete
+			// more at http://www.devbridge.com/sourcery/components/jquery-autocomplete
+			$('#autocomplete').autocomplete({
+				minChars: 2,
+				showNoSuggestionNotice: true,
+				noSuggestionNotice: 'Sorry, no matching results',
+				serviceUrl: 'http://localhost:8084/sesame/autocomplete',
+				lookupFilter: function(suggestion, originalQuery, queryLowerCase) {
+					var re = new RegExp('\\b' + $.Autocomplete.utils.escapeRegExChars(queryLowerCase), 'gi');
+					return re.test(suggestion.value);
+				},
+				onSelect: function(suggestion) {
+					console.info(suggestion);
+					/*console.info(suggestion.value);
+					console.info(suggestion.data);
+					console.info(suggestion.label);
+					console.info(suggestion.scheme);
+					console.info(suggestion.vocabulary);
+					console.info(suggestion.creator);*/
+
+					//query = SPARQL.labelmetadata_all;
+					query = "SELECT DISTINCT ?p ?o WHERE { ?label ?p ?o . ?label <http://143.93.114.137/vocab#identifier> \"$identifier\". }";
+					query = query.replace('$identifier', suggestion.label);
+					//console.log(query);
+					query = escape(query);
+					$.ajax({
+						type: 'GET',
+						url: 'http://143.93.114.137/sesame/SPARQL',
+						data: {query: query, format: 'json'},
+						error: function(jqXHR, textStatus, errorThrown) {
+							alert(errorThrown);
+						},
+						success: function(output) {
+							var bindings = output.results.bindings;
+
+							var predicate = "";
+							var object = "";
+
+							for (var i = 0; i < bindings.length; i++) {
+								// predicate					
+								if (bindings[i].p) {
+									predicate = bindings[i].p.value;
+								}
+								// object
+								if (bindings[i].o.type == "uri") {
+									object = bindings[i].o.value;
+								} else if (bindings[i].o.type == "literal" && bindings[i].o['xml:lang']) {
+									object = bindings[i].o.value + "@" + bindings[i].o['xml:lang'];
+								} else if (bindings[i].o.type == "literal") {
+									object = bindings[i].o.value;
+								}
+								console.info(i+" -- "+predicate+" -- "+object);
+							}
+						}
+					});
+				},
+				onHint: function(hint) {
+					$('#autocomplete-ajax-x').val(hint);
+				},
+				onInvalidateSelection: function() {
+					console.info('You selected: none');
+				}
+			});
+
+
+
+		</script>
+	</body>
+</html>

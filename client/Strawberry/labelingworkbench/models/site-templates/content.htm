@@ -1,0 +1,29 @@
+<!--Content-->
+<div id='content'>
+	<br>
+	<h1>Template Page</h1>
+	<h2>The Labeling System</h2>
+	<br>
+	<!--Navigation from PHP-->
+	<div id='left-nav'>
+		<ul>
+			<li><b>Menu</b></li>
+		</ul>
+		<?php
+			if (!securePage($_SERVER['PHP_SELF'])){die();}
+			//Links for logged in user
+			if(isUserLoggedIn()) {
+				echo "
+				<ul>
+				<li><b>Example Menu</b></li>
+				<li><a href='account.php'>Home</a></li>
+				<li><a href='logout.php'>Logout</a></li>
+				</ul>";
+			}
+		?>
+	</div>
+	<!--Main Content-->
+	<div id='maingrey'>
+		<b>content</b>
+	</div>
+</div>

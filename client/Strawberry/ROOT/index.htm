@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Labeling System APPS</title>
+		<link type="text/css" rel="stylesheet" href="../ProjectTree/style.css"/>
+        <style type="text/css">
+            a.info:link    {color: black;text-decoration:none}
+            a.info:visited {color: black;text-decoration:none}
+            a.info:hover   {color: brown;text-decoration:none}
+            a.info:active  {color: black;text-decoration:none}
+			
+			.login-dialog .modal-dialog {
+				width: 800px;
+			}
+			
+
+        </style>
+		
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<link href="bootstrap/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<script src="bootstrap/assets/bootstrap/js/bootstrap.min.js"></script>
+		<script src="bootstrap/assets/prettify/run_prettify.js"></script>
+		<link href="bootstrap/assets/bootstrap-dialog/css/bootstrap-dialog.min.css" rel="stylesheet" type="text/css" />
+		<script src="bootstrap/assets/bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
+		
+		<script>
+			// redirect if ip is the host
+			if (window.location.href== "http://143.93.114.137/") {
+				window.location.href = 'http://labeling.i3mainz.hs-mainz.de'; 
+			}
+		</script>
+	
+    </head>
+    <body>
+        <center>
+		<br><br><br>
+		<img src='ls_neu.png' height="80">
+		<br><br>
+		<h2>The Labeling System - a software tool for enriched controlled vocabularies</h2>
+        <br><br>
+        <a href='http://www.ieg-mainz.de' target='_self'><img src='ieg.gif'></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href='http://www.i3mainz.hs-mainz.de' target='_self'><img src='i3mainz.png'></a>
+        <br><br><br>
+        <table border="0">
+            <tr>
+                <td width="40%" align="center">
+                    <h3>
+					<b><a href="" class='info'>The Labeling System Project: </a></b><a href="http://i3mainz.hs-mainz.de/de/projekte/labelingsystem" target="_blank">Project Website</a>
+                    <br><br>
+					<b><a href="" class='info'>The Labeling System: </a></b><a href="/client" target="_self">Login and Register</a>
+                    <br><br>
+                    <b><a href="" class='info'>APIs: </a></b><a href="/rest/" target="_self">REST API</a> | <a href="/labelingserver/SPARQL" target="_self">SPARQL Endpoint</a> | <a href="sparql_label.jsp" target="_self">SPARQL GUI</a> | <a href="/ProjectTreePublic/tree.jsp?height=700&width=2000&name=example" target="_self">Public Vocabularies</a>
+					<br><br>
+					<b><a href="" class='info'>Ontology: </a></b><a href="/vocab/index.htm" target="_self">Labeling System Vocabulary</a> | 
+					<a href="/ontology/index.htm" target="_self">Usage of the Labeling System Vocabulary</a>
+					<br><br>
+					<b><a href="" class='info'>Documentation: </a></b><a href="/faq" target="_self">FAQ</a>  | <a href="/rest-api" target="_self">REST API</a> | <a href="/sparql-api" target="_self">SPARQL API</a> | <a href="/technology" target="_self">Technology</a>  | <a href="http://labeling.i3mainz.hs-mainz.de/share/_ls_doku_v13.pdf" target="_blank">GUI User Manual v1.3</a>
+					<br><br>
+					<b><a href="" class='info'>Sourcecode: </a></b><a href="https://github.com/florianthiery/LabelingSystem" target="_blank">Look at the GitHub LabelingSystem Repository</a>
+					</h3>
+                </td>
+            </tr>
+        </table>
+		<br>
+        <hr style="width:85%; color:grey; background-color:grey; height:1px; text-align:center; border:none;">
+		<br>
+		<i>developed by Florian Thiery (i3mainz)</i> | <a href="http://www.i3mainz.hs-mainz.de/impressum" target="_self">Impress</a>
+        <br><br>
+        
+        </center>
+    </body>
+</html>
+
+<script>
+
+function lsinfo() {
+
+	BootstrapDialog.show({
+		size: BootstrapDialog.SIZE_NORMAL,
+		title: 'LabelingSystem',
+		message: "<h1>Here you can Login and Register to the LabelingSystem. In the LS you are able to create your own labels and connect them to existing concepts.</h1>",
+		draggable: true,
+		cssClass: 'login-dialog',
+		buttons: [{
+			label: 'close',
+			action: function(dialogItself){
+				dialogItself.close();
+			}
+		}]
+	});
+
+}
+
+function treeinfo() {
+
+	BootstrapDialog.show({
+		size: BootstrapDialog.SIZE_NORMAL,
+		title: 'LabelingSystem',
+		message: "<h1>Here you can see the Project tree of published vocabularies.</h1>",
+		draggable: true,
+		cssClass: 'login-dialog',
+		buttons: [{
+			label: 'close',
+			action: function(dialogItself){
+				dialogItself.close();
+			}
+		}]
+	});
+
+}
+
+function lsontoinfo() {
+
+	BootstrapDialog.show({
+		size: BootstrapDialog.SIZE_NORMAL,
+		title: 'LS namespace',
+		message: "<h1>Here you can see the internal labeling system ontology.</h1>",
+		draggable: true,
+		cssClass: 'login-dialog',
+		buttons: [{
+			label: 'close',
+			action: function(dialogItself){
+				dialogItself.close();
+			}
+		}]
+	});
+
+}
+
+function restinfo() {
+
+	BootstrapDialog.show({
+		size: BootstrapDialog.SIZE_NORMAL,
+		title: 'REST Interface',
+		message: "<h1>Here you can browse through the published vocabularies in a REST interface. The hierarchy of vocabularies and labels are represented in XML. The vocabularies and labels are also available in RDF as skos:ConceptScheme and skos:Concept.</h1>",
+		draggable: true,
+		cssClass: 'login-dialog',
+		buttons: [{
+			label: 'close',
+			action: function(dialogItself){
+				dialogItself.close();
+			}
+		}]
+	});
+
+}
+
+function endpointinfo() {
+
+	BootstrapDialog.show({
+		size: BootstrapDialog.SIZE_NORMAL,
+		title: 'SPARQL endpoint',
+		message: "<h1>Here you can browse to the SPARQL endpoint (label repository). The param query allows SPARQL requests. The param format give you the choise to choose the representation.</h1>",
+		draggable: true,
+		cssClass: 'login-dialog',
+		buttons: [{
+			label: 'close',
+			action: function(dialogItself){
+				dialogItself.close();
+			}
+		}]
+	});
+
+}
+
+function labelsinfo() {
+
+	BootstrapDialog.show({
+		size: BootstrapDialog.SIZE_NORMAL,
+		title: 'SPARQL the Labels',
+		message: "<h1>Here you can SPARQL (query) the Label repository. It uses the SPARQL endpoint.</h1>",
+		draggable: true,
+		cssClass: 'login-dialog',
+		buttons: [{
+			label: 'close',
+			action: function(dialogItself){
+				dialogItself.close();
+			}
+		}]
+	});
+
+}
+
+function conceptsinfo() {
+
+	BootstrapDialog.show({
+		size: BootstrapDialog.SIZE_NORMAL,
+		title: 'SPARQL the Concepts',
+		message: "<h1>Here you can SPARQL (query) the Concept repository. It uses NOT the SPARQL label endpoint.</h1>",
+		draggable: true,
+		cssClass: 'login-dialog',
+		buttons: [{
+			label: 'close',
+			action: function(dialogItself){
+				dialogItself.close();
+			}
+		}]
+	});
+
+}
+
+</script>
