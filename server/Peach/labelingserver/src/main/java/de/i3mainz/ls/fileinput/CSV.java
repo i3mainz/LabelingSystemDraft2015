@@ -37,7 +37,7 @@ import org.openrdf.repository.RepositoryException;
  *
  * @author Florian Thiery M.Sc.
  * @author i3mainz - Institute for Spatial Information and Surveying Technology
- * @version 16.03.2015
+ * @version 30.04.2015
  */
 public class CSV implements Runnable {
 //public class CSV {
@@ -116,7 +116,7 @@ public class CSV implements Runnable {
 			// dcterms licence
 			label += Config.Instance("label", uuid, true) + " ";
 			label += Config.getPrefixItemOfOntology("dcterms", "licence", true) + " ";
-			label += "<http://creativecommons.org/licenses/by-sa/4.0/> ";
+			label += "<" + Config.LICENCE + "> ";
 			label += ". ";
 			// ls identifier
 			label += Config.Instance("label", uuid, true) + " ";
