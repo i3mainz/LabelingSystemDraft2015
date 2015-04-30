@@ -197,7 +197,7 @@ IO.getUUID = function(url) {
 			// dcterms licence
 			vocabulary += Config.Instance("vocabulary",uuid,true);
 			vocabulary += "<http://purl.org/dc/terms/licence> ";
-			vocabulary += "<http://creativecommons.org/licenses/by-sa/4.0/> ";
+			vocabulary += "<http://creativecommons.org/licenses/by/4.0/> ";
 			vocabulary += ".";
 			// rdfs label
 			vocabulary += Config.Instance("vocabulary",uuid,true);
