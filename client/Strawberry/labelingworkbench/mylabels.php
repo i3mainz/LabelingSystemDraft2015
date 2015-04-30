@@ -232,7 +232,7 @@ IO.getUUID = function(url) {
 			// dcterms licence
 			label += Config.Instance("label",uuid,true);
 			label += "<http://purl.org/dc/terms/licence> ";
-			label += "<http://creativecommons.org/licenses/by-sa/4.0/> ";
+			label += "<http://creativecommons.org/licenses/by/4.0/> ";
 			label += ".";
 			// skos pref label
 			label += Config.Instance("label",uuid,true);
