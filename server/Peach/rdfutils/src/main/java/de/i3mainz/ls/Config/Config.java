@@ -17,7 +17,6 @@ public class Config {
 	public final static String TRIPLESTORE_SERVER = "http://labeling.i3mainz.hs-mainz.de/openrdf-sesame";
 	public final static String TRIPLESTORE_WORKBENCH = "http://labeling.i3mainz.hs-mainz.de/openrdf-workbench";
 	public final static String FILE_STORE_PATH = "/tmp/";
-	//public final static String FILE_STORE_PATH = "C:/temp/";
 	public final static String FILE_STORE_PATH_PUBLIC = "/usr/share/apache-tomcat-7.0.50/webapps/labelingserver/";
 	// change prefixes here
 	public final static String PREFIX_LABELINGSYSTEM = "http://143.93.114.137/vocab#";
