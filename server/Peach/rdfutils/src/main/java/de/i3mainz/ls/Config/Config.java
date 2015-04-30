@@ -7,7 +7,7 @@ import de.i3mainz.ls.rdfutils.exceptions.ConfigException;
  *
  * @author Florian Thiery M.Sc.
  * @author i3mainz - Institute for Spatial Information and Surveying Technology
- * @version 13.04.2015
+ * @version 30.04.2015
  */
 public class Config {
 
@@ -15,7 +15,9 @@ public class Config {
 	public final static String SERVER = "http://labeling.i3mainz.hs-mainz.de/";
 	public final static String INSTANCEHOST = "http://143.93.114.137/";
 	public final static String TRIPLESTORE_SERVER = "http://labeling.i3mainz.hs-mainz.de/openrdf-sesame";
+	public final static String TRIPLESTORE_WORKBENCH = "http://labeling.i3mainz.hs-mainz.de/openrdf-workbench";
 	public final static String FILE_STORE_PATH = "/tmp/";
+	//public final static String FILE_STORE_PATH = "C:/temp/";
 	public final static String FILE_STORE_PATH_PUBLIC = "/usr/share/apache-tomcat-7.0.50/webapps/labelingserver/";
 	// change prefixes here
 	public final static String PREFIX_LABELINGSYSTEM = "http://143.93.114.137/vocab#";
@@ -42,6 +44,9 @@ public class Config {
 	// security properties
 	public final static String LOGIN = "";
 	public final static String PASSWORD = "";
+	
+	// choose label licence
+	public static final String LICENCE = "http://creativecommons.org/licenses/by/4.0/";
 
 	/**
 	 * get instance URI (options: type[project;vocabulary;label] and brackets
