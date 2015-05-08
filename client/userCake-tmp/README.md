@@ -4,19 +4,20 @@
 
 - copy the files from folder "userCake-tmp"
 - rename the folder (it will be the name of the client application)
-0. Install MySQL (https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial). If userCake is installed remove "install" folder, if not the install routine will be runned. If not please run http://yourdomain.com/install/. UserCake will attempt to build the database for you. After completion delete the install folder.
-a. Create a MySQL database on your server ("usrcake")
-b. Create a new user and give all the PRIVILEGES (z.B. "tmp")
-	[root@srv-i3-labeling-system ~] mysql -u root -p
-	mysql> SHOW DATABASES;
-	mysql> host, user, password from mysql.user;
-	--mysql> CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
-	mysql> CREATE USER 'tmp'@'localhost' IDENTIFIED BY 'ljrFfrAvsownvXBPsS56';
-	--GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
-	mysql> GRANT ALL PRIVILEGES ON * . * TO 'tmp'@'localhost';
-	mysql> FLUSH PRIVILEGES;
-	mysql> exit
-c. Fill out the connection details in $db_host = "localhost"; "models/db-settings.php" ($db_name, $db_user, $db_pass)
+- Install MySQL (https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial). If userCake is installed remove "install" folder, if not the install routine will be runned. If not please run http://yourdomain.com/install/. UserCake will attempt to build the database for you. After completion delete the install folder.
+
+* Connect to MySQL database
+* [root@server ~] mysql -u root -p
+* Create a MySQL database on your server ("usrcake")
+* mysql> CREATE DATABASE database name;
+* mysql> SHOW DATABASES;
+* Create a new user and give all the PRIVILEGES (z.B. "tmp")
+* mysql> CREATE USER 'tmp'@'localhost' IDENTIFIED BY 'password';
+* mysql> GRANT ALL PRIVILEGES ON * . * TO 'tmp'@'localhost';
+* mysql> FLUSH PRIVILEGES;
+* mysql> host, user, password from mysql.user;
+* mysql> exit
+* Fill out the connection details in $db_host = "localhost"; "models/db-settings.php" ($db_name, $db_user, $db_pass)
 
 * Demo: http://labeling.i3mainz.hs-mainz.de/userCake-tmp
 
