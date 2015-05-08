@@ -21,3 +21,4 @@
 * Fill out the connection details in $db_host = "localhost"; "models/db-settings.php" ($db_name, $db_user, $db_pass)
 
 * Demo: http://labeling.i3mainz.hs-mainz.de/userCake-tmp
+* Demo with Template: http://labeling.i3mainz.hs-mainz.de/labeling-workbench-tmp
