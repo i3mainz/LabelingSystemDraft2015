@@ -1,8 +1,6 @@
-README
-======
+#README
 
-How to install the userCake Management System
----------------------------------------------
+##How to install the userCake Management System
 
 - copy the files from folder "userCake-tmp"
 - rename the folder (it will be the name of the client application)
@@ -19,6 +17,8 @@ b. Create a new user and give all the PRIVILEGES (z.B. "tmp")
 	mysql> FLUSH PRIVILEGES;
 	mysql> exit
 c. Fill out the connection details in $db_host = "localhost"; "models/db-settings.php" ($db_name, $db_user, $db_pass)
+
+* Demo: http://labeling.i3mainz.hs-mainz.de/userCake-tmp
 
 ==================================================
 
