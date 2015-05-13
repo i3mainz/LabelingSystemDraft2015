@@ -102,7 +102,7 @@ else {
 	<br>
 	<li><a href='evaluation.php'>Questions?</a></li>
 	<br>
-	<li><a href='impressum.php'>Impressum</a></li>
+	<li><a href='impressum.php'>About</a></li>
 	</ul>";
 }
 
