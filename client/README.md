@@ -31,6 +31,7 @@ The client folder includes four kind of folders: the root page, information page
 
 ## Versions
 
+* 13/05/2015: UserFrosting (empty version for Apache without Tomcat using userCake 2.0.2)
 * 07/05/2015: template version: http://labeling.i3mainz.hs-mainz.de/labeling-workbench-tmp
 * 07/05/2015: userCake-tmp (empty version)
 * 13/04/2015: Strawberry [gamma]
