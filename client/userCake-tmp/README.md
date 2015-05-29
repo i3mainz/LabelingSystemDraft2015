@@ -16,7 +16,7 @@
 * mysql> CREATE USER 'tmp'@'localhost' IDENTIFIED BY 'password';
 * mysql> GRANT ALL PRIVILEGES ON * . * TO 'tmp'@'localhost';
 * mysql> FLUSH PRIVILEGES;
-* mysql> host, user, password from mysql.user;
+* mysql> SELECT host, user, password from mysql.user;
 * mysql> exit
 * Fill out the connection details in $db_host = "localhost"; "models/db-settings.php" ($db_name, $db_user, $db_pass)
 
