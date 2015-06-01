@@ -143,7 +143,7 @@ ls:sameAs a owl:ObjectProperty, rdfs:Property;
 ls:identifier a owl:ObjectProperty, rdfs:Property;
 	rdfs:label "identifier"@en;
 	rdfs:comment "Resource identifier"@en;
-	rdfs:domain ls:Project, ls:Vocabulary, ls:Label;
+	rdfs:domain ls:Project, ls:Vocabulary, ls:Label, ls:SPARQLendpoint, ls:GUI, ls:Annotation;
 	rdfs:range xsd:string;
 	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.	
 
