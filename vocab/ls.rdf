@@ -166,6 +166,9 @@
     <rdfs:comment xml:lang="en">Property to connect internal resources to external REST resources</rdfs:comment>
     <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Vocabulary"/>
     <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Label"/>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#SPARQLendpoint"/>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#GUI"/>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Annotation"/>
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
     <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
   </owl:ObjectProperty>

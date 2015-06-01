@@ -136,7 +136,7 @@ ls:belongsTo a owl:ObjectProperty, rdfs:Property;
 ls:sameAs a owl:ObjectProperty, rdfs:Property;
 	rdfs:label "same as"@en;
 	rdfs:comment "Property to connect internal resources to external REST resources"@en;
-	rdfs:domain ls:Vocabulary, ls:Label;
+	rdfs:domain ls:Vocabulary, ls:Label, ls:SPARQLendpoint, ls:GUI, ls:Annotation;
 	rdfs:range rdfs:Resource;
 	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
 	
