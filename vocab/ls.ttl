@@ -1,0 +1,234 @@
+@prefix ls: <http://143.93.114.137/vocab#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+#This ontology specifies the Labeling System Namespace with it's Classes and Properties.
+
+# OWL Ontology
+
+ls: a owl:Ontology;
+	rdfs:label "Labeling System Ontology"@en;
+	dcterms:created "2015-06-01"^^xsd:date;
+	dcterms:description "An RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies"@en;
+	rdfs:seeAlso <http://labeling.i3mainz.hs-mainz.de/vocab>;
+	owl:versionInfo "1.3";
+	dcterms:contributor "Florian Thiery", "Kai-Christian Bruhn";
+	dcterms:creator "Florian Thiery";
+	dcterms:licence <http://creativecommons.org/licenses/by-sa/4.0/>.
+
+# Classes
+
+ls:SuperConcept a owl:Class;
+	rdfs:SubClassOf rdfs:Resource, rdfs:Class, skos:Concept;
+	skos:definition "SuperConcept class for typing"@en;
+	rdfs:comment "SuperConcept class for typing"@en;
+	rdfs:label "Super Concept"@en;
+	skos:prefLabel "Super Concept"@en;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+
+ls:Project a owl:Class, ls:SuperConcept;
+	skos:definition "Project Class for internal storage"@en;
+	rdfs:comment "Project Class for internal storage"@en;
+	rdfs:label "Project"@en;
+	skos:prefLabel "Project"@en;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+
+ls:Vocabulary a owl:Class, ls:SuperConcept;
+	skos:definition "Vocabulary Class for internal storage"@en;
+	rdfs:comment "Vocabulary Class for internal storage"@en;
+	rdfs:label "Vocabulary"@en;
+	skos:prefLabel "Vocabulary"@en;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+
+ls:Label a owl:Class, ls:SuperConcept;
+	skos:definition "Label Class for internal storage"@en;
+	rdfs:comment "Label Class for internal storage"@en;
+	rdfs:label "Label"@en;
+	skos:prefLabel "Label"@en;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+
+ls:SPARQLendpoint a owl:Class, ls:SuperConcept;
+	skos:definition "Class to describe an SPARQL endpoint"@en;
+	rdfs:comment "Class to describe an SPARQL endpoint"@en;
+	rdfs:label "SPARQL endpoint"@en;
+	skos:prefLabel "SPARQL endpoint"@en;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+	
+ls:GUI a owl:Class, ls:SuperConcept;
+	skos:definition "Class to describe a Labeling System GUI"@en;
+	rdfs:comment "Class to describe a Labeling System GUI"@en;
+	rdfs:label "Labeling System GUI"@en;
+	skos:prefLabel "Labeling System GUI"@en;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+	
+ls:Annotation a owl:Class, ls:SuperConcept;
+	skos:definition "Class to describe a Property Annotation"@en;
+	rdfs:comment "Class to describe a Property Annotation"@en;
+	rdfs:label "Annotation"@en;
+	skos:prefLabel "Annotation"@en;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+
+ls:Certainty a owl:Class, ls:SuperConcept;
+	skos:definition "Class to describe a certainty status"@en;
+	rdfs:comment "Class to describe a certainty status"@en;
+	rdfs:label "Certainty"@en;
+	skos:prefLabel "Certainty"@en;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+
+ls:CertaintyHigh a owl:Class, ls:SuperConcept;
+	rdfs:SubClassOf ls:Certainty;
+	skos:definition "Class to describe a high certainty status"@en;
+	rdfs:comment "Class to describe a high certainty status"@en;
+	rdfs:label "high certainty"@en;
+	skos:prefLabel "high certainty"@en;
+	rdfs:isDefinedBy <http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-data.certainty.html>;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+
+ls:CertaintyMedium a owl:Class, ls:SuperConcept;
+	rdfs:SubClassOf ls:Certainty;
+	skos:definition "Class to describe a medium certainty status"@en;
+	rdfs:comment "Class to describe a medium certainty status"@en;
+	rdfs:label "medium certainty"@en;
+	skos:prefLabel "medium certainty"@en;
+	rdfs:isDefinedBy <http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-data.certainty.html>;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+
+ls:CertaintyLow a owl:Class, ls:SuperConcept;
+	rdfs:SubClassOf ls:Certainty;
+	skos:definition "Class to describe a low certainty status"@en;
+	rdfs:comment "Class to describe a low certainty status"@en;
+	rdfs:label "low certainty"@en;
+	skos:prefLabel "low certainty"@en;
+	rdfs:isDefinedBy <http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-data.certainty.html>;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+
+ls:CertaintyUnknown a owl:Class, ls:SuperConcept;
+	rdfs:SubClassOf ls:Certainty;
+	skos:definition "Class to describe a unknown certainty status"@en;
+	rdfs:comment "Class to describe a unknown certainty status"@en;
+	rdfs:label "unknown certainty"@en;
+	skos:prefLabel "unknown certainty"@en;
+	rdfs:isDefinedBy <http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-data.certainty.html>;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+
+# Properties
+
+ls:contains a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "contains"@en;
+	rdfs:comment "Property for internal linking"@en;
+	rdfs:domain ls:Project, ls:Vocabulary;
+	rdfs:range ls:Label, ls:Vocabulary;
+	owl:inverseOf ls:belongsTo;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+	
+ls:belongsTo a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "belongs to"@en;
+	rdfs:comment "Property for internal linking"@en;
+	rdfs:domain ls:Label, ls:Vocabulary;
+	rdfs:range ls:Project, ls:Vocabulary;
+	owl:inverseOf ls:contains;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+
+ls:sameAs a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "same as"@en;
+	rdfs:comment "Property to connect internal resources to external REST resources"@en;
+	rdfs:domain ls:Vocabulary, ls:Label;
+	rdfs:range rdfs:Resource;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+	
+ls:identifier a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "identifier"@en;
+	rdfs:comment "Resource identifier"@en;
+	rdfs:domain ls:Project, ls:Vocabulary, ls:Label;
+	rdfs:range xsd:string;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.	
+
+ls:state a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "state"@en;
+	rdfs:comment "Property for publishing vocabularies"@en;
+	rdfs:domain ls:Vocabulary;
+	rdfs:range "public";
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+	
+ls:prefLang a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "prefLang"@en;
+	rdfs:comment "Property for set the preference language of a label"@en;
+	rdfs:domain ls:Label;
+	rdfs:range xsd:string;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+	
+ls:sparqlname a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "SPARQL endpoint name"@en;
+	rdfs:comment "Property for set the name of the SPARQL endpoint.the Base URI for a SPARQL query with XML response"@en;
+	rdfs:domain ls:SPARQLendpoint;
+	rdfs:range xsd:string;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+	
+ls:sparqlxmluri a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "SPARQL endpoint XML-URI"@en;
+	rdfs:comment "Property for set the Base URI for a SPARQL query with XML response"@en;
+	rdfs:domain ls:SPARQLendpoint;
+	rdfs:range xsd:string;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+	
+ls:sparqlquery a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "SPARQL query"@en;
+	rdfs:comment "Property for set SPARQL query to get skos:Concept, skos:Label and skos:ConceptScheme"@en;
+	rdfs:domain ls:SPARQLendpoint;
+	rdfs:range xsd:string;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+	
+ls:hasGUI a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "has GUI"@en;
+	rdfs:comment "Property for connecting a ls:GUI to a foaf:Agent"@en;
+	rdfs:domain ls:GUI;
+	rdfs:range foaf:Agent;
+	owl:inverseOf ls:isGUIof;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+	
+ls:isGUIof a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "is GUI of"@en;
+	rdfs:comment "Property for connecting a foaf:Agent to a ls:GUI"@en;
+	rdfs:domain foaf:Agent;
+	rdfs:range ls:GUI;
+	owl:inverseOf ls:hasGUI;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+	
+ls:GUIcreator a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "GUI creator"@en;
+	rdfs:comment "Property for setting a GUI creator"@en;
+	rdfs:domain ls:GUI;
+	rdfs:range xsd:string;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+	
+ls:GUIprefLang a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "GUI preference language"@en;
+	rdfs:comment "Property for setting a GUI preference language"@en;
+	rdfs:domain ls:GUI;
+	rdfs:range xsd:string;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+	
+ls:GUImenuLang a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "GUI menu language"@en;
+	rdfs:comment "Property for setting a GUI menu language"@en;
+	rdfs:domain ls:GUI;
+	rdfs:range xsd:string;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+	
+ls:hasPropertyAnnotation a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "annotation property"@en;
+	rdfs:comment "Property for setting an Annotation for a property"@en;
+	rdfs:domain ls:Label;
+	rdfs:range ls:Annotation;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.
+
+ls:hasCertainty a owl:ObjectProperty, rdfs:Property;
+	rdfs:label "certainty"@en;
+	rdfs:comment "Property for setting a certainty to a property"@en;
+	rdfs:domain ls:Annotation;
+	rdfs:range ls:Certainty;
+	rdfs:isDefinedBy <http://labeling.i3mainz.hs-mainz.de/vocab>.

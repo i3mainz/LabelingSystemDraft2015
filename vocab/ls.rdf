@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <owl:Ontology rdf:about="http://143.93.114.137/vocab#">
+    <rdfs:label xml:lang="en">Labeling System Ontology</rdfs:label>
+    <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-06-01</dc:created>
+    <dc:description xml:lang="en">An RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies</dc:description>
+    <rdfs:seeAlso rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+    <owl:versionInfo>1.3</owl:versionInfo>
+    <dc:contributor>Florian Thiery</dc:contributor>
+    <dc:contributor>Kai-Christian Bruhn</dc:contributor>
+    <dc:creator>Florian Thiery</dc:creator>
+    <dc:licence rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/"/>
+  </owl:Ontology>
+
+  <owl:Class rdf:about="http://143.93.114.137/vocab#SuperConcept">
+    <rdfs:SubClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:SubClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:SubClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:definition xml:lang="en">SuperConcept class for typing</skos:definition>
+    <rdfs:comment xml:lang="en">SuperConcept class for typing</rdfs:comment>
+    <rdfs:label xml:lang="en">Super Concept</rdfs:label>
+    <skos:prefLabel xml:lang="en">Super Concept</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://143.93.114.137/vocab#Project">
+    <rdf:type rdf:resource="http://143.93.114.137/vocab#SuperConcept"/>
+    <skos:definition xml:lang="en">Project Class for internal storage</skos:definition>
+    <rdfs:comment xml:lang="en">Project Class for internal storage</rdfs:comment>
+    <rdfs:label xml:lang="en">Project</rdfs:label>
+    <skos:prefLabel xml:lang="en">Project</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://143.93.114.137/vocab#Vocabulary">
+    <rdf:type rdf:resource="http://143.93.114.137/vocab#SuperConcept"/>
+    <skos:definition xml:lang="en">Vocabulary Class for internal storage</skos:definition>
+    <rdfs:comment xml:lang="en">Vocabulary Class for internal storage</rdfs:comment>
+    <rdfs:label xml:lang="en">Vocabulary</rdfs:label>
+    <skos:prefLabel xml:lang="en">Vocabulary</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://143.93.114.137/vocab#Label">
+    <rdf:type rdf:resource="http://143.93.114.137/vocab#SuperConcept"/>
+    <skos:definition xml:lang="en">Label Class for internal storage</skos:definition>
+    <rdfs:comment xml:lang="en">Label Class for internal storage</rdfs:comment>
+    <rdfs:label xml:lang="en">Label</rdfs:label>
+    <skos:prefLabel xml:lang="en">Label</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://143.93.114.137/vocab#SPARQLendpoint">
+    <rdf:type rdf:resource="http://143.93.114.137/vocab#SuperConcept"/>
+    <skos:definition xml:lang="en">Class to describe an SPARQL endpoint</skos:definition>
+    <rdfs:comment xml:lang="en">Class to describe an SPARQL endpoint</rdfs:comment>
+    <rdfs:label xml:lang="en">SPARQL endpoint</rdfs:label>
+    <skos:prefLabel xml:lang="en">SPARQL endpoint</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://143.93.114.137/vocab#GUI">
+    <rdf:type rdf:resource="http://143.93.114.137/vocab#SuperConcept"/>
+    <skos:definition xml:lang="en">Class to describe a Labeling System GUI</skos:definition>
+    <rdfs:comment xml:lang="en">Class to describe a Labeling System GUI</rdfs:comment>
+    <rdfs:label xml:lang="en">Labeling System GUI</rdfs:label>
+    <skos:prefLabel xml:lang="en">Labeling System GUI</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://143.93.114.137/vocab#Annotation">
+    <rdf:type rdf:resource="http://143.93.114.137/vocab#SuperConcept"/>
+    <skos:definition xml:lang="en">Class to describe a Property Annotation</skos:definition>
+    <rdfs:comment xml:lang="en">Class to describe a Property Annotation</rdfs:comment>
+    <rdfs:label xml:lang="en">Annotation</rdfs:label>
+    <skos:prefLabel xml:lang="en">Annotation</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://143.93.114.137/vocab#Certainty">
+    <rdf:type rdf:resource="http://143.93.114.137/vocab#SuperConcept"/>
+    <skos:definition xml:lang="en">Class to describe a certainty status</skos:definition>
+    <rdfs:comment xml:lang="en">Class to describe a certainty status</rdfs:comment>
+    <rdfs:label xml:lang="en">Certainty</rdfs:label>
+    <skos:prefLabel xml:lang="en">Certainty</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://143.93.114.137/vocab#CertaintyHigh">
+    <rdf:type rdf:resource="http://143.93.114.137/vocab#SuperConcept"/>
+    <rdfs:SubClassOf rdf:resource="http://143.93.114.137/vocab#Certainty"/>
+    <skos:definition xml:lang="en">Class to describe a high certainty status</skos:definition>
+    <rdfs:comment xml:lang="en">Class to describe a high certainty status</rdfs:comment>
+    <rdfs:label xml:lang="en">high certainty</rdfs:label>
+    <skos:prefLabel xml:lang="en">high certainty</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-data.certainty.html"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://143.93.114.137/vocab#CertaintyMedium">
+    <rdf:type rdf:resource="http://143.93.114.137/vocab#SuperConcept"/>
+    <rdfs:SubClassOf rdf:resource="http://143.93.114.137/vocab#Certainty"/>
+    <skos:definition xml:lang="en">Class to describe a medium certainty status</skos:definition>
+    <rdfs:comment xml:lang="en">Class to describe a medium certainty status</rdfs:comment>
+    <rdfs:label xml:lang="en">medium certainty</rdfs:label>
+    <skos:prefLabel xml:lang="en">medium certainty</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-data.certainty.html"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://143.93.114.137/vocab#CertaintyLow">
+    <rdf:type rdf:resource="http://143.93.114.137/vocab#SuperConcept"/>
+    <rdfs:SubClassOf rdf:resource="http://143.93.114.137/vocab#Certainty"/>
+    <skos:definition xml:lang="en">Class to describe a low certainty status</skos:definition>
+    <rdfs:comment xml:lang="en">Class to describe a low certainty status</rdfs:comment>
+    <rdfs:label xml:lang="en">low certainty</rdfs:label>
+    <skos:prefLabel xml:lang="en">low certainty</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-data.certainty.html"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://143.93.114.137/vocab#CertaintyUnknown">
+    <rdf:type rdf:resource="http://143.93.114.137/vocab#SuperConcept"/>
+    <rdfs:SubClassOf rdf:resource="http://143.93.114.137/vocab#Certainty"/>
+    <skos:definition xml:lang="en">Class to describe a unknown certainty status</skos:definition>
+    <rdfs:comment xml:lang="en">Class to describe a unknown certainty status</rdfs:comment>
+    <rdfs:label xml:lang="en">unknown certainty</rdfs:label>
+    <skos:prefLabel xml:lang="en">unknown certainty</skos:prefLabel>
+    <rdfs:isDefinedBy rdf:resource="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-data.certainty.html"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#contains">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+    <rdfs:label xml:lang="en">contains</rdfs:label>
+    <rdfs:comment xml:lang="en">Property for internal linking</rdfs:comment>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Project"/>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Vocabulary"/>
+    <rdfs:range rdf:resource="http://143.93.114.137/vocab#Label"/>
+    <rdfs:range rdf:resource="http://143.93.114.137/vocab#Vocabulary"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#belongsTo">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+        <rdfs:label xml:lang="en">belongs to</rdfs:label>
+        <rdfs:comment xml:lang="en">Property for internal linking</rdfs:comment>
+        <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Label"/>
+        <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Vocabulary"/>
+        <rdfs:range rdf:resource="http://143.93.114.137/vocab#Project"/>
+        <rdfs:range rdf:resource="http://143.93.114.137/vocab#Vocabulary"/>
+        <owl:inverseOf rdf:resource="http://143.93.114.137/vocab#contains"/>
+        <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#sameAs">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+    <rdfs:label xml:lang="en">same as</rdfs:label>
+    <rdfs:comment xml:lang="en">Property to connect internal resources to external REST resources</rdfs:comment>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Vocabulary"/>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Label"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#identifier">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+    <rdfs:label xml:lang="en">identifier</rdfs:label>
+    <rdfs:comment xml:lang="en">Resource identifier</rdfs:comment>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Project"/>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Vocabulary"/>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Label"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#state">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+    <rdfs:label xml:lang="en">state</rdfs:label>
+    <rdfs:comment xml:lang="en">Property for publishing vocabularies</rdfs:comment>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Vocabulary"/>
+    <rdfs:range>public</rdfs:range>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#prefLang">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+    <rdfs:label xml:lang="en">prefLang</rdfs:label>
+    <rdfs:comment xml:lang="en">Property for set the preference language of a label</rdfs:comment>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Label"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#sparqlname">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+    <rdfs:label xml:lang="en">SPARQL endpoint name</rdfs:label>
+    <rdfs:comment xml:lang="en">Property for set the name of the SPARQL endpoint.the Base URI for a SPARQL query with XML response</rdfs:comment>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#SPARQLendpoint"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#sparqlxmluri">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+    <rdfs:label xml:lang="en">SPARQL endpoint XML-URI</rdfs:label>
+    <rdfs:comment xml:lang="en">Property for set the Base URI for a SPARQL query with XML response</rdfs:comment>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#SPARQLendpoint"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#sparqlquery">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+    <rdfs:label xml:lang="en">SPARQL query</rdfs:label>
+    <rdfs:comment xml:lang="en">Property for set SPARQL query to get skos:Concept, skos:Label and skos:ConceptScheme</rdfs:comment>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#SPARQLendpoint"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#hasGUI">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+    <rdfs:label xml:lang="en">has GUI</rdfs:label>
+    <rdfs:comment xml:lang="en">Property for connecting a ls:GUI to a foaf:Agent</rdfs:comment>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#GUI"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#isGUIof">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+        <rdfs:label xml:lang="en">is GUI of</rdfs:label>
+        <rdfs:comment xml:lang="en">Property for connecting a foaf:Agent to a ls:GUI</rdfs:comment>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://143.93.114.137/vocab#GUI"/>
+        <owl:inverseOf rdf:resource="http://143.93.114.137/vocab#hasGUI"/>
+        <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#GUIcreator">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+    <rdfs:label xml:lang="en">GUI creator</rdfs:label>
+    <rdfs:comment xml:lang="en">Property for setting a GUI creator</rdfs:comment>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#GUI"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#GUIprefLang">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+    <rdfs:label xml:lang="en">GUI preference language</rdfs:label>
+    <rdfs:comment xml:lang="en">Property for setting a GUI preference language</rdfs:comment>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#GUI"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#GUImenuLang">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+    <rdfs:label xml:lang="en">GUI menu language</rdfs:label>
+    <rdfs:comment xml:lang="en">Property for setting a GUI menu language</rdfs:comment>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#GUI"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#hasPropertyAnnotation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+    <rdfs:label xml:lang="en">annotation property</rdfs:label>
+    <rdfs:comment xml:lang="en">Property for setting an Annotation for a property</rdfs:comment>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Label"/>
+    <rdfs:range rdf:resource="http://143.93.114.137/vocab#Annotation"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://143.93.114.137/vocab#hasCertainty">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+    <rdfs:label xml:lang="en">certainty</rdfs:label>
+    <rdfs:comment xml:lang="en">Property for setting a certainty to a property</rdfs:comment>
+    <rdfs:domain rdf:resource="http://143.93.114.137/vocab#Annotation"/>
+    <rdfs:range rdf:resource="http://143.93.114.137/vocab#Certainty"/>
+    <rdfs:isDefinedBy rdf:resource="http://labeling.i3mainz.hs-mainz.de/vocab"/>
+  </owl:ObjectProperty>
+
+</rdf:RDF>
