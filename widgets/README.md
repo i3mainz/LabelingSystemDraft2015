@@ -2,6 +2,8 @@
 
 ##Dropdown Widget
 
+![](https://raw.githubusercontent.com/i3mainz/LabelingSystem/master/widgets/img/ex_dropdown.png)
+
 ###How to?
 
 (1) insert jQuery in head section
@@ -36,6 +38,8 @@
 ```
 
 ##Detail Widget
+
+![](https://raw.githubusercontent.com/i3mainz/LabelingSystem/master/widgets/img/ex_detail.png)
 
 ###How to?
 
@@ -75,6 +79,8 @@
 ```
 
 ##Autocomplete Widget
+
+![](https://raw.githubusercontent.com/i3mainz/LabelingSystem/master/widgets/img/ex_autocomplete.png)
 
 ###How to?
 
