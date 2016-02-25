@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Labeling System Dropdown Widget</title>
+	<!-- 1. include jquery -->
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+	<!-- 2. create select field with id -->
+	<!-- 3. set attribute lswidgettype = "dropdown" -->
+	<!-- 4. set attribute dataid = "labeling system vocabulary identifier" -->
+	<select id="select1" lswidgettype="dropdown" dataid="bf4e7ece-a369-4096-b3d5-3ee3db2144f1"></select>
+	<select id="select2" lswidgettype="dropdown" dataid="d4a341b1-595c-4cbe-998c-6d868dd80077"></select>
+	<!-- 5. include "magic code" -->
+	<script>
+	!function(e){for(var a=0;a<e.length;a++){var l="http://labeling.i3mainz.hs-mainz.de/labelingserver/SPARQL?query=PREFIX%20ls%3A%20%3Chttp%3A%2F%2Flabeling.i3mainz.hs-mainz.de%2Fvocab%23%3E%0APREFIX%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0APREFIX%20ls-voc%3A%20%3Chttp%3A%2F%2Flabeling.i3mainz.hs-mainz.de%2Fvocabulary%23%3E%0ASELECT%20%3Flabel%20WHERE%20%7B%0A%09%3Fs%20ls%3Aidentifier%20%3Fidentifier%20.%0A%09ls-voc%3A#dataid#%20ls%3Acontains%20%3Fs%20.%0A%09%3Fs%20skos%3AprefLabel%20%3Flabel%20.%0A%09%3Fs%20ls%3AprefLang%20%3FprefLang%20.%0A%09FILTER(LANGMATCHES(LANG(%3Flabel)%2C%20%3FprefLang))%0A%7D%20ORDER%20BY%20ASC(%3Flabel)&format=json&file=true";l=l.replace("#dataid#",$(e[a]).attr("dataid")),$.ajax({url:l,async:!1,error:function(e,a,l){console.error(l)},success:function(l){try{l=JSON.parse(l)}catch(i){}var n=l.results.bindings;for(item in n){var r=n[item].label.value;$(e[a]).append('<option value="'+r+'">'+r+"</option>")}}})}}($("select[lswidgettype='dropdown']"));
+	</script>
+</body>
+
+</html>

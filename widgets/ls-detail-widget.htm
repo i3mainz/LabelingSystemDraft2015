@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Labeling System Detail Widget</title>
+	<!-- 1. include jquery -->
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<!-- 2. include style -->
+	<style>
+	* { font-family: sans-serif;}
+	.ls-div { border: 1px solid; background: lightgrey; width:250px; padding:10px; font-size: 16px;}
+	.ls-div-language { font-style: italic; font-size: 12px; }
+	a { color: black; }
+	</style>
+</head>
+
+<body>
+	<!-- 3. create div field with id -->
+	<!-- 4. set attribute lswidgettype = "detail-label" -->
+	<!-- 5. attribute dataid = "labeling system label identifier" -->
+	<div id="div1" class="ls-div" lswidgettype="detail-label" dataid="0502ce71-9d16-47ea-9941-bb59d18113f0"></div>
+	<div id="div2" class="ls-div" lswidgettype="detail-label" dataid="73b6ca51-95d4-4692-8b54-c7fe082d6fee"></div>
+	<!-- 6. include "magic code" -->
+	<script>
+	!function(a){for(var e=0;e<a.length;e++){var l="http://labeling.i3mainz.hs-mainz.de/labelingserver/SPARQL?query=PREFIX%20ls%3A%20%3Chttp%3A%2F%2Flabeling.i3mainz.hs-mainz.de%2Fvocab%23%3E%0A%09%09PREFIX%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%0A%09%09PREFIX%20ls-lab%3A%20%3Chttp%3A%2F%2Flabeling.i3mainz.hs-mainz.de%2Flabel%23%3E%0A%09%09SELECT%20*%20WHERE%20%7B%0A%09%09%09%3Fs%20ls%3Aidentifier%20%3Fidentifier%20.%0A%09%09%09%3Fs%20skos%3AprefLabel%20%3Flabel%20.%0A%09%09%09%3Fs%20ls%3AprefLang%20%3FprefLang%20.%0A%09%09%09FILTER(LANGMATCHES(LANG(%3Flabel)%2C%20%3FprefLang))%0A%20%20%20%20%20%20%20%20%20%20%20%20FILTER%20(%3Fidentifier%20%3D%20%22#dataid#%22)%0A%09%09%7D%20ORDER%20BY%20ASC(%3Flabel)&format=json&file=true";l=l.replace("#dataid#",$(a[e]).attr("dataid")),$.ajax({url:l,async:!1,error:function(a,e,l){console.error(l)},success:function(l){try{l=JSON.parse(l)}catch(i){}var n=l.results.bindings;for(item in n){var r=n[item].label.value,s=n[item].prefLang.value,t=n[item].s.value;$(a[e]).append('<p><a href="'+t+'" target="_blank">'+r+'</a> <span class="ls-div-language">'+s+"</span></p>")}}})}}($("div[lswidgettype='detail-label']"));
+	</script>
+</body>
+
+</html>

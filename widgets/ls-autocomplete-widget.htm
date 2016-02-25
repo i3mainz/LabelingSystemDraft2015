@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Labeling System Autocomplete Widget</title>
+	<!-- 1. include jquery -->
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<!-- 2. include autocomplete.js -->
+	<script src="http://labeling.i3mainz.hs-mainz.de/client/jquery.autocomplete.js"></script>
+	<!-- 3. include style -->
+	<style>
+	* { font-family: sans-serif;}
+	.autocomplete-suggestions { border: 1px solid; background: #FFF; overflow: auto; }
+	.autocomplete-suggestions strong { font-weight: bold; font-style: italic; }
+	.autocomplete-selected { background: lightgrey; }
+	.autocomplete-search { font-size: 16px; border: 1px solid; width: 500px; height:30px; }
+	</style>
+</head>
+
+<body>
+	<p>autocomplete look for all labels in the system, z.B. "han", on select open detail page</p>
+	<!-- 4. create input field with id -->
+	<!-- 5. set attribute lswidgettype = "autocomplete-ls" OR "autocomplete-creator" -->
+	<!-- 6. if creator set attribute dataid = "labeling system user identifier" -->
+	<input type='text' class='autocomplete-search' id='autocomplete1' lswidgettype="autocomplete-ls" />
+	<p>autocomplete look for all labels from user "annamainz", z.B. "han", on select open detail page</p>
+	<input type='text' class='autocomplete-search' id='autocomplete2' lswidgettype="autocomplete-creator" dataid="annamainz" />
+	<p>autocomplete look for all labels from vocabulary "d4a341b1-595c-4cbe-998c-6d868dd80077", z.B. "han", on select open detail page</p>
+	<input type='text' class='autocomplete-search' id='autocomplete2' lswidgettype="autocomplete-vocabulary" dataid="d4a341b1-595c-4cbe-998c-6d868dd80077" />
+	<!-- 7. include "magic code" -->
+	<script>
+	!function(e){$(e).autocomplete({minChars:2,showNoSuggestionNotice:!0,noSuggestionNotice:"Sorry, no matching results",serviceUrl:"http://labeling.i3mainz.hs-mainz.de/labelingserver/autocomplete",lookupFilter:function(e,t,n){var o=new RegExp("\\b"+$.Autocomplete.utils.escapeRegExChars(n),"gi");return o.test(e.value)},onSelect:function(e){window.open(e.label)},onHint:function(e){},onInvalidateSelection:function(){console.info("You selected: none")}})}($("input[lswidgettype='autocomplete-ls']")),!function(e){$(e).autocomplete({minChars:2,showNoSuggestionNotice:!0,noSuggestionNotice:"Sorry, no matching results",serviceUrl:function(){var t="http://labeling.i3mainz.hs-mainz.de/labelingserver/autocomplete";return t+="?creator="+$(e).attr("dataid")},lookupFilter:function(e,t,n){var o=new RegExp("\\b"+$.Autocomplete.utils.escapeRegExChars(n),"gi");return o.test(e.value)},onSelect:function(e){window.open(e.label)},onHint:function(e){},onInvalidateSelection:function(){console.info("You selected: none")}})}($("input[lswidgettype='autocomplete-creator']")),!function(e){$(e).autocomplete({minChars:2,showNoSuggestionNotice:!0,noSuggestionNotice:"Sorry, no matching results",serviceUrl:function(){var t="http://labeling.i3mainz.hs-mainz.de/labelingserver/autocomplete";return t+="?vocabulary="+$(e).attr("dataid")},lookupFilter:function(e,t,n){var o=new RegExp("\\b"+$.Autocomplete.utils.escapeRegExChars(n),"gi");return o.test(e.value)},onSelect:function(e){window.open(e.label)},onHint:function(e){},onInvalidateSelection:function(){console.info("You selected: none")}})}($("input[lswidgettype='autocomplete-vocabulary']"));
+	</script>
+</body>
+
+</html>
